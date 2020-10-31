@@ -1,13 +1,12 @@
 import React from 'react';
 import Card from "./Card/Card";
 
-const List = ({data, category}) => {
-    const fruits = data[category] /*Ciblez les fruits*/
-    console.log(fruits)
+const List = ({data}) => {
+
     return (
         <div className="col-sm">
           <div className="row">
-              {fruits.map((fruit, index) => <Card key={index} panier={fruit}/>)}
+              {data.map((item, index) => <Card key={index} item={item}/>)}
           </div>
         </div>
     );
