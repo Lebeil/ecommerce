@@ -8,8 +8,8 @@ const Card = (props) => {
                 <div className="card carte">
                     <img
                         width="170"
-                        height="170"
-                        src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
+                        height="290"
+                        src={process.env.PUBLIC_URL + `/assets/${panier.category}/${panier.image}`}
                         className="card-img-top"
                         alt="Orange"
                     />

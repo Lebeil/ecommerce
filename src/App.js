@@ -1,24 +1,30 @@
+import React, {Fragment, useState} from 'react'
 import Navbar from './Components/Navbar'
 import SideMenu from "./Components/SideMenu/SideMenu";
 import List from "./Components/List"
 import './App.css'
 import {list} from './data'
 
-function App() {
+const App = ()=> {
+    const [category, setCategory] = useState(0)
+    const loadCategory = (index)=> {
+        setCategory(index)
+    }
+
   return (
-    <div>
+    <Fragment>
       <Navbar/>
       <div className="container">
-          <div className="row">
-              <SideMenu/>
+          <div className="row mt-5">
+              <SideMenu load={loadCategory} category={category}/>
               <div className="col-sm">
                   <div className="row">
-                      <List data={list}/>
+                      <List data={list} category={category}/>
                   </div>
               </div>
           </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
 

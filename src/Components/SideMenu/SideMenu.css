@@ -3,3 +3,12 @@
     margin: 0;
     padding: 0;
 }
+
+.sidebar li{
+    cursor: pointer;
+}
+
+.active {
+    font-weight: 700;
+    font-size: 1.5vw;
+}
