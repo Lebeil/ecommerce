@@ -1,9 +1,10 @@
 import React from 'react';
+import './Navbar.css';
 
-const Navbar = ({filter, setFiltering}) => {
+const Navbar = ({filter, setFiltering, count}) => {
     return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="foo">Navbar</a>
+                <a className="navbar-brand" href="foo">E-commerce</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="foonavbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -38,15 +39,18 @@ const Navbar = ({filter, setFiltering}) => {
                         <input
                             className="form-control mr-sm-2"
                             type="search"
-                            placeholder="Search"
+                            placeholder="Recherche"
                             aria-label="Search"
                             onChange={(e)=> {
                                 setFiltering(e.target.value.length > 0)
                                 filter(e.target.value)
                             }}
                         />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
+                    <div className="basket">
+                        <i className="fas fa-shopping-basket fa-3x"></i>
+                        <span className="badge badge-pill badge-success">{count}</span>
+                    </div>
                 </div>
             </nav>
     );

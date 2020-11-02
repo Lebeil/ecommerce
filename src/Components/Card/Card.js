@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import Modal from '../Modal/Modal';
 
-const Card = ({item}) => {
+const Card = ({item, addToCard, count}) => {
     return (
         <Fragment>
             <div className="col-sm-4">
@@ -25,7 +25,7 @@ const Card = ({item}) => {
                     </div>
                 </div>
             </div>
-            <Modal item={item}/>
+            <Modal item={item} addToCard={addToCard} count={count}/>
         </Fragment>
     );
 };

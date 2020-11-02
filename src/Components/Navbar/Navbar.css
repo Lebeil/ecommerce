@@ -1,0 +1,10 @@
+.basket {
+    position: relative;
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    font-size: 14px;
+    right: -10px;
+}

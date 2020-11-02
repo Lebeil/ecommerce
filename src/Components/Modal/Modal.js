@@ -1,7 +1,8 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import './Modal.css';
 
-const Modal = ({item}) => {
+const Modal = ({item, addToCard, count}) => {
+    const [quantity, setQuantity] = useState(1)
     return (
         <Fragment>
             <div className="modal fade" id={item.ref} tabIndex="-1" aria-labelledby="exampleModalLabel"
@@ -29,13 +30,16 @@ const Modal = ({item}) => {
                                     >
                                         <button
                                             type="button"
-                                            className="btn btn-secondary">
+                                            className="btn btn-secondary"
+                                            onClick={()=> {setQuantity(quantity > 1 ? quantity-1 : 1)}}
+                                        >
                                             -
                                         </button>
-                                        <span className="btn btn-light qty">1</span>
+                                        <span className="btn btn-light qty">{quantity}</span>
                                         <button
                                             type="button"
-                                            className="btn btn-secondary">
+                                            className="btn btn-secondary"
+                                            onClick={()=> { setQuantity(quantity+1)}}>
                                             +
                                         </button>
                                     </div>
@@ -45,7 +49,11 @@ const Modal = ({item}) => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Ajouter au panier</button>
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={()=> {addToCard(quantity+1)}}>Ajouter au panier
+                            </button>
                         </div>
                     </div>
                 </div>
