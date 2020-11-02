@@ -6,7 +6,7 @@ const List = ({data}) => {
     return (
         <div className="col-sm">
           <div className="row">
-              {data.map((item, index) => <Card key={index} item={item}/>)}
+              {data.map((item) => <Card key={item.ref} item={item}/>)}
           </div>
         </div>
     );
