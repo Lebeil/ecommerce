@@ -8,3 +8,10 @@
     font-size: 14px;
     right: -10px;
 }
+
+.cart {
+    margin: 0 35px;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
