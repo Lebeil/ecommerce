@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import Modal from '../Modal/Modal';
 
-const Card = ({item, addToCard, count}) => {
+const Card = ({item, addToCard}) => {
     return (
         <Fragment>
             <div className="col-sm-4">
@@ -14,25 +14,18 @@ const Card = ({item, addToCard, count}) => {
                         alt="Orange"
                     />
                     <div className="card-body">
-                        <h5 className="card-title">
-                            {item.name}
-                        </h5>
-                        <p className="card-text">
-                            Some quick example text to build on the card title and make up the bulk
+                        <h5 className="card-title">{item.name}</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         <p>{item.price}€</p>
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            data-toggle="modal"
-                            data-target={`#${item.ref}`}
-                        >
+                        <button type="button" className="btn btn-primary" data-toggle="modal"
+                            data-target={`#${item.ref}`}>
                             Acheter
                         </button>
                     </div>
                 </div>
             </div>
-            <Modal item={item} addToCard={addToCard} count={count}/>
+            <Modal item={item} addToCard={addToCard}/>
         </Fragment>
     );
 };

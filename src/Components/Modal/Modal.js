@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import './Modal.css';
 
-const Modal = ({item, addToCard, count}) => {
+const Modal = ({item, addToCard}) => {
     const [quantity, setQuantity] = useState(1)
     return (
         <Fragment>

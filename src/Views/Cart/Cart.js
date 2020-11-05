@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 const Cart = () => {
     return (
-        <Fragment>
-            0 article dans le panier
-        </Fragment>
+        <div>
+            Bonjour
+        </div>
     );
 };
 
